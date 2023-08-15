@@ -25,7 +25,7 @@ pipeline {
   }
 }
 
-
+// https://github.com/bacayoco/updatemanifest.git
     }
     
 //     post {
