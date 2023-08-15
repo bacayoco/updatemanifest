@@ -25,13 +25,13 @@ pipeline {
 
     }
     
-    post {
-        always {
-            junit 'target/surefire-reports/TEST-*.xml'
-            deleteDir()
-        }
-    }
-}
+//     post {
+//         always {
+//             junit 'target/surefire-reports/TEST-*.xml'
+//             deleteDir()
+//         }
+//     }
+// }
 
 
 
