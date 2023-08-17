@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: raj80dockerid/test:35
+      - image: kojibello/kojitechs-app1:1.0.0
         name: flaskdemo
         resources: {}
 status: {}
@@ -33,6 +33,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 80
   selector:
     app: flaskdemo
