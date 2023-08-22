@@ -1,45 +1,38 @@
 apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: mysql
-  labels: 
-    app: mysql
-    tier: backend-end
+kind: ReplicaSet
+metadata: 
+  name: my-helloworls-rs
+
 
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
-      app: mysql
-  strategy:
-    type: Recreate  
-
-  template:
+      app: myapp
+  templete:
     metadata:
-      name: mysql
       labels:
-        app: mysql
+          app: myapp
     spec:
       containers:
-        - name: mysql
-          image: mysql:5.6
-          ports:
-           - containerPort: 3306
-          env:
-           - name: MYSQL_ROOT_PASSWORD
-             valueFrom:
-                secretKeyRef:
-                  name: mysql
-                  key: password
-          volumeMounts:
-                   - name: mysql-dbcreation-script
-                     mountPath: /docker-entrypoint-initdb.d 
+      - name: myapp1
+        image: kojibello/kojitechs-app:1.0.0
+        ports: 
+          - containerPort: 80
 
-      volumes:
-            - name:  mysql-dbcreation-script
-              configMap:  
-                name: mysql-dbcreation-script
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: my-helloworld-service
 
 
-
-
+spec:
+  type: loadBalancer # i
+  selector:
+    app: myapp
+  ports:
+   - name: http
+     port: 80
+     targetPort: 80
