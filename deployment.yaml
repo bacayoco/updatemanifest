@@ -19,7 +19,6 @@ spec:
         image: kojibello/kojitechs-app:1.0.0
         ports: 
           - containerPort: 80
-
 ---
 
 apiVersion: v1
