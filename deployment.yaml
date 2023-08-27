@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myapp1
-        image: 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:39
+        image: 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:41
         ports: 
           - containerPort: 80
 ---
