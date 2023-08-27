@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myapp1
-        image: kojibello/kojitechs-app:1.0.0
+        image: 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:39
         ports: 
           - containerPort: 80
 ---
