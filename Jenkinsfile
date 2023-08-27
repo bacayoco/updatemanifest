@@ -19,7 +19,7 @@ pipeline {
                         sh "git config user.email azeh123tanket@gmail.com"
                         sh "git config user.name bacayoco"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
+                        sh "sed -i 's+202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo.*+202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                          sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
@@ -31,7 +31,7 @@ pipeline {
 
 // https://github.com/bacayoco/updatemanifest.git
     }
-    
+    //  sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
 //     post {
 //         always {
 //             junit 'target/surefire-reports/TEST-*.xml'
